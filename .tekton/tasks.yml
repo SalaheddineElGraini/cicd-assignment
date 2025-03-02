@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup-task
+spec:
+  steps:
+    - name: cleanup
+      image: alpine
+      script: |
+        #!/bin/sh
+        echo "Cleanup step placeholder"
+
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: nose-test-task
+spec:
+  steps:
+    - name: run-tests
+      image: python:3.9
+      script: |
+        #!/bin/sh
+        echo "Running Nose tests placeholder"
